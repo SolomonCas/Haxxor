@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="hexagon_color">#131122</color>
+    <color name="hexagon_border">#8DA6CA</color>
+
+    <color name="text_color">#004AAD</color>
 </resources>
