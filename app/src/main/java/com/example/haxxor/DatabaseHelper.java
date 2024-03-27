@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static Context context;
     private static final String DATABASE_NAME = "AbilitiesDB";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String TABLE_ABILITIES = "Abilities";
     private static final String COLUMN_TYPE = "type";
     private static final String COLUMN_NAME = "name";
@@ -39,12 +39,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ABILITIES); // Easier to Update CSV
-        String CREATE_ABILITIES_TABLE = "CREATE TABLE " + TABLE_ABILITIES + "("
-                + COLUMN_TYPE + " TEXT,"
-                + COLUMN_NAME + " TEXT,"
-                + COLUMN_EFFECT + " TEXT" + ")";
-        db.execSQL(CREATE_ABILITIES_TABLE);
+        if (oldVersion < 2) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_ABILITIES); // Easier to Update CSV
+            String CREATE_ABILITIES_TABLE = "CREATE TABLE " + TABLE_ABILITIES + "("
+                    + COLUMN_TYPE + " TEXT,"
+                    + COLUMN_NAME + " TEXT,"
+                    + COLUMN_EFFECT + " TEXT" + ")";
+            db.execSQL(CREATE_ABILITIES_TABLE);
+        }
     }
 
     public List<List<String>> readCSV (Context context, String csvFilePath) throws IOException {
