@@ -42,8 +42,8 @@
 
             <TextView
                 android:id="@+id/detailed_name"
-                android:layout_width="163dp"
-                android:layout_height="35dp"
+                android:layout_width="337dp"
+                android:layout_height="41dp"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="29dp"
                 android:text="Card Name"

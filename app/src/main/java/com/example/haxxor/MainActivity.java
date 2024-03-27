@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AbilityActivity.class);
+                intent.putExtra("Type", "Haxxor"); // example only
                 startActivity(intent);
             }
         });
