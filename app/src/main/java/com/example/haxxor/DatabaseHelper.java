@@ -8,8 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.haxxor.AbilityListView.Ability;
+
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -38,7 +39,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ABILITIES); // Easier to Update CSV
         String CREATE_ABILITIES_TABLE = "CREATE TABLE " + TABLE_ABILITIES + "("
                 + COLUMN_TYPE + " TEXT,"
                 + COLUMN_NAME + " TEXT,"

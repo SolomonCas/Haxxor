@@ -1,4 +1,4 @@
-package com.example.haxxor;
+package com.example.haxxor.AbilityListView;
 
 public class Ability {
     String Type;

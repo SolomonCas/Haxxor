@@ -1,5 +1,6 @@
 package com.example.haxxor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.haxxor.AbilityListView.AbilityActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         AbilityList_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db.getAbilities("Sentinel");
+                Intent intent = new Intent(MainActivity.this, AbilityActivity.class);
+                startActivity(intent);
             }
         });
     }
