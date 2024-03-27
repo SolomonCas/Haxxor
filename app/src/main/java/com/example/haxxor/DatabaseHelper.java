@@ -116,4 +116,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return list;
     }
+
+    public ArrayList<Ability> getAllAbilities (){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Ability> list = new ArrayList<>();
+        String[] columns = new String[]{COLUMN_TYPE , COLUMN_NAME , COLUMN_EFFECT};
+        Cursor cursor = db.query(TABLE_ABILITIES, columns, null, null, null, null, null);
+        while (cursor.moveToNext()){
+            list.add(new Ability(cursor.getString(0), cursor.getString(1), cursor.getString(2) ));
+            Log.d("TAG", "Retrieved string: from Cursor " + cursor.getString(1));
+        }
+        return list;
+    }
 }

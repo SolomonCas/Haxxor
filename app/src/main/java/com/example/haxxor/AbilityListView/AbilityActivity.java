@@ -34,7 +34,8 @@ public class AbilityActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
         ability_Recycler = (RecyclerView) findViewById(R.id.abilityRecycler);
 
-        abilityModel = db.getAbilities(getIntent().getStringExtra("Type"));
+        //abilityModel = db.getAbilities(getIntent().getStringExtra("Type")); // For Specific Player
+        abilityModel = db.getAllAbilities();
         abilityRecyclerAdaptor = new ability_RecyclerAdaptor(this, abilityModel);
         ability_Recycler.setAdapter(abilityRecyclerAdaptor);
         ability_Recycler.setLayoutManager(new LinearLayoutManager(this));
