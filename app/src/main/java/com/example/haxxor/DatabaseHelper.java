@@ -23,11 +23,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static Context context;
     private static final String DATABASE_NAME = "AbilitiesDB";
-    private static final int DATABASE_VERSION = 6;
+    private static final int DATABASE_VERSION = 7;
     private static final String TABLE_ABILITIES = "Abilities";
     private static final String COLUMN_TYPE = "type";
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_EFFECT = "effect";
+    private static final String COLUMN_IMAGE = "image";
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
@@ -39,12 +40,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 6) {
+        if (oldVersion < 7) {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_ABILITIES); // Easier to Update CSV
             String CREATE_ABILITIES_TABLE = "CREATE TABLE " + TABLE_ABILITIES + "("
                     + COLUMN_TYPE + " TEXT,"
                     + COLUMN_NAME + " TEXT,"
-                    + COLUMN_EFFECT + " TEXT" + ")";
+                    + COLUMN_EFFECT + " TEXT,"
+                    + COLUMN_IMAGE + " TEXT" + ")";
             db.execSQL(CREATE_ABILITIES_TABLE);
         }
     }
@@ -87,6 +89,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 values.put(COLUMN_TYPE, row.get(0));
                 values.put(COLUMN_NAME, row.get(1));
                 values.put(COLUMN_EFFECT, row.get(2));
+                values.put(COLUMN_IMAGE, row.get(3));
                 // ... (add more mappings for other columns)
 
                 db.insert(TABLE_ABILITIES, null, values);
@@ -106,13 +109,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<Ability> getAbilities (String type){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Ability> list = new ArrayList<>();
-        String[] columns = new String[]{COLUMN_TYPE , COLUMN_NAME , COLUMN_EFFECT};
+        String[] columns = new String[]{COLUMN_TYPE , COLUMN_NAME , COLUMN_EFFECT, COLUMN_IMAGE};
         String selection = COLUMN_TYPE + " =?";
         String[] selectionArgs = {type};
         Cursor cursor = db.query(TABLE_ABILITIES, columns, selection, selectionArgs, null, null, null);
         while (cursor.moveToNext()){
-            list.add(new Ability(cursor.getString(0), cursor.getString(1), cursor.getString(2) ));
-            Log.d("TAG", "Retrieved string: from Cursor " + cursor.getString(1));
+            list.add(new Ability(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3)));
+            Log.d("TAG", "Retrieved string: from Cursor " + cursor.getString(3));
         }
         return list;
     }
@@ -120,11 +123,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<Ability> getAllAbilities (){
         SQLiteDatabase db = this.getReadableDatabase();
         ArrayList<Ability> list = new ArrayList<>();
-        String[] columns = new String[]{COLUMN_TYPE , COLUMN_NAME , COLUMN_EFFECT};
+        String[] columns = new String[]{COLUMN_TYPE , COLUMN_NAME , COLUMN_EFFECT, COLUMN_IMAGE};
         Cursor cursor = db.query(TABLE_ABILITIES, columns, null, null, null, null, null);
         while (cursor.moveToNext()){
-            list.add(new Ability(cursor.getString(0), cursor.getString(1), cursor.getString(2) ));
-            Log.d("TAG", "Retrieved string: from Cursor " + cursor.getString(1));
+            list.add(new Ability(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3)));
+            Log.d("TAG", "Retrieved string: from Cursor " + cursor.getString(3));
         }
         return list;
     }
