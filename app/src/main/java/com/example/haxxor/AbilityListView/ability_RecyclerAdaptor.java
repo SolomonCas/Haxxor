@@ -1,6 +1,7 @@
 package com.example.haxxor.AbilityListView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,16 @@ public class ability_RecyclerAdaptor extends RecyclerView.Adapter<ability_Recycl
     @Override
     public void onBindViewHolder(@NonNull ability_RecyclerAdaptor.MyViewHolder holder, int position) {
         holder.Ability_Name.setText(ability_model.get(position).getName());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Detailed_Ability.class);
+                intent.putExtra("Name", ability_model.get(position).getName());
+                intent.putExtra("Effect", ability_model.get(position).getEffect());
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -44,6 +55,7 @@ public class ability_RecyclerAdaptor extends RecyclerView.Adapter<ability_Recycl
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView Ability_Name;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             Ability_Name = itemView.findViewById(R.id.Ability_Name);
