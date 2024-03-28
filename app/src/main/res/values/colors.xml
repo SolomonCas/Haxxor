@@ -3,8 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="hexagon_board_color">#8DA6CA</color>
     <color name="hexagon_color">#131122</color>
-    <color name="hexagon_border">#8DA6CA</color>
+    <color name="hexagon_sentinel">#8DA6CA</color>
+    <color name="hexagon_haxxor">#E65454</color>
+
+    <color name="trap">#d631d1</color>
 
     <color name="text_color">#004AAD</color>
 </resources>

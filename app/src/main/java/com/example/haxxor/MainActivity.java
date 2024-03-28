@@ -13,19 +13,23 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.example.haxxor.AbilityListView.AbilityActivity;
 
+
 public class MainActivity extends AppCompatActivity {
 
     Button AbilityList_Button;
+    int intensity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.intensity_btn), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
         DatabaseHelper db = new DatabaseHelper(MainActivity.this);
         db.setupTable();
         AbilityList_Button = (Button) findViewById(R.id.ability_list_button);

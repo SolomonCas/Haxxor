@@ -33,6 +33,7 @@ public class HexagonalGridView extends View {
         initializeHexagons();
     }
 
+    @SuppressLint("ResourceAsColor")
     private void initializeHexagons() {
         hexagons = new ArrayList<>();
 
@@ -46,7 +47,15 @@ public class HexagonalGridView extends View {
 
                 Paint paint = new Paint();
                 paint.setAntiAlias(true);
-                paint.setColor(Color.BLUE);
+                if(i == 1) {
+                    paint.setColor(R.color.hexagon_sentinel);
+                }
+                else if (i == 5) {
+                    paint.setColor(R.color.hexagon_haxxor);
+                }
+                else {
+                    paint.setColor(R.color.hexagon_color);
+                }
 
                 boolean isClickable = (i >= 1 && i <= 5);
 

@@ -1,5 +1,6 @@
 package com.example.haxxor;
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -55,8 +56,9 @@ public class Hexagon {
         return isClickable;
     }
 
+    @SuppressLint("ResourceAsColor")
     public void toggleColor() {
-        if (paint.getColor() == Color.BLUE) {
+        if (paint.getColor() == R.color.hexagon_color) {
             paint.setColor(Color.RED);
         } else {
             paint.setColor(Color.BLUE);
