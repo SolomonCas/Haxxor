@@ -47,7 +47,8 @@ public class HexagonalGridView extends View {
             List<Hexagon> rowHexagons = new ArrayList<>();
             int numHexagonsInRow = HEXAGONS_IN_ROWS[i];
 
-            int startX = HEX_MARGIN + (HEX_WIDTH / 2) * (NUM_ROWS - numHexagonsInRow) + BOARD_START_MARGIN;
+            //int startX = HEX_MARGIN + (HEX_WIDTH / 2) * (NUM_ROWS - numHexagonsInRow) + BOARD_START_MARGIN;
+            float startX = (getWidth() - getRowWidth(i) + HEX_WIDTH) / 2;
 
             for (int j = 0; j < numHexagonsInRow; j++) {
                 Paint fillPaint = new Paint();
@@ -77,6 +78,11 @@ public class HexagonalGridView extends View {
 
             hexagons.add(rowHexagons);
         }
+    }
+
+    private float getRowWidth(int row) {
+        int numHexagons = HEXAGONS_IN_ROWS[row];
+        return (float) (numHexagons * HEX_RADIUS * Math.sqrt(3));
     }
 
 
