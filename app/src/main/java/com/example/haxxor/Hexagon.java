@@ -10,13 +10,16 @@ public class Hexagon {
     private final float centerX;
     private final float centerY;
     private final float radius;
-    private final Paint paint;
+    private final Paint fillPaint;
+    private final Paint strokePaint;
     private boolean isClickable;
-    public Hexagon(float centerX, float centerY, float radius, Paint paint, boolean isClickable) {
+
+    public Hexagon(float centerX, float centerY, float radius, Paint fillPaint, Paint strokePaint, boolean isClickable) {
         this.centerX = centerX;
         this.centerY = centerY;
         this.radius = radius;
-        this.paint = paint;
+        this.fillPaint = fillPaint;
+        this.strokePaint = strokePaint;
         this.isClickable = isClickable;
     }
 
@@ -37,7 +40,12 @@ public class Hexagon {
         }
 
         path.close();
-        canvas.drawPath(path, paint);
+        canvas.drawPath(path, fillPaint);
+
+        // Draw stroke
+        if (strokePaint != null) {
+            canvas.drawPath(path, strokePaint);
+        }
     }
 
     public float getCenterX() {
@@ -58,10 +66,10 @@ public class Hexagon {
 
     @SuppressLint("ResourceAsColor")
     public void toggleColor() {
-        if (paint.getColor() == R.color.hexagon_color) {
-            paint.setColor(Color.RED);
+        if (fillPaint.getColor() == Color.parseColor("#131122")) {
+            fillPaint.setColor(Color.parseColor("#d631d1"));
         } else {
-            paint.setColor(Color.BLUE);
+            fillPaint.setColor(Color.parseColor("#131122"));
         }
     }
 

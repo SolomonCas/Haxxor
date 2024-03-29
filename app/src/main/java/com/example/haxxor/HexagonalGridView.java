@@ -18,9 +18,14 @@ public class HexagonalGridView extends View {
 
     private static final int NUM_ROWS = 7;
     private static final int[] HEXAGONS_IN_ROWS = {3, 4, 5, 6, 5, 4, 3};
-    private static final int HEX_RADIUS = 65; // Adjust this to increase the hexagon size
+    private static final int HEX_RADIUS = 100; // Adjust this to increase the hexagon size
     private static final int HEX_WIDTH = (int) (HEX_RADIUS * Math.sqrt(3));
-    private List<Hexagon> hexagons;
+    private static final int HEX_HEIGHT = HEX_RADIUS * 2;
+    private static final int HEX_MARGIN = 1;
+    private static final int STROKE_WIDTH = 3;
+    private static final int BOARD_TOP_MARGIN = 100;
+    private static final int BOARD_START_MARGIN = 18;
+    private List<List<Hexagon>> hexagons;
 
     public HexagonalGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -36,64 +41,69 @@ public class HexagonalGridView extends View {
     @SuppressLint("ResourceAsColor")
     private void initializeHexagons() {
         hexagons = new ArrayList<>();
+        int startY = HEX_MARGIN + BOARD_TOP_MARGIN;
 
-        int startY = 1;
         for (int i = 0; i < NUM_ROWS; i++) {
-            int startX = (getWidth() - getRowWidth(i)) / 2;
+            List<Hexagon> rowHexagons = new ArrayList<>();
+            int numHexagonsInRow = HEXAGONS_IN_ROWS[i];
 
-            for (int j = 0; j < HEXAGONS_IN_ROWS[i]; j++) {
-                int centerX = startX + HEX_WIDTH / 2;
-                int centerY = startY + HEX_RADIUS;
+            int startX = HEX_MARGIN + (HEX_WIDTH / 2) * (NUM_ROWS - numHexagonsInRow) + BOARD_START_MARGIN;
 
-                Paint paint = new Paint();
-                paint.setAntiAlias(true);
-                if(i == 1) {
-                    paint.setColor(R.color.hexagon_sentinel);
+            for (int j = 0; j < numHexagonsInRow; j++) {
+                Paint fillPaint = new Paint();
+                if (i == 0) {
+                    fillPaint.setColor(Color.parseColor("#8DA6CA"));
+                } else if (i == NUM_ROWS - 1) {
+                    fillPaint.setColor(Color.parseColor("#E65454"));
+                } else {
+                    fillPaint.setColor(Color.parseColor("#131122"));
                 }
-                else if (i == 5) {
-                    paint.setColor(R.color.hexagon_haxxor);
-                }
-                else {
-                    paint.setColor(R.color.hexagon_color);
-                }
+                fillPaint.setStyle(Paint.Style.FILL);
+
+                Paint strokePaint = new Paint();
+                strokePaint.setColor(Color.parseColor("#B9C9DF")); // Set stroke color
+                strokePaint.setStyle(Paint.Style.STROKE);
+                strokePaint.setStrokeWidth(STROKE_WIDTH); // Set stroke width
 
                 boolean isClickable = (i >= 1 && i <= 5);
 
-                Hexagon hexagon = new Hexagon(centerX, centerY, HEX_RADIUS, paint, isClickable);
-                hexagons.add(hexagon);
+                // Adjust startY and startX to include HEX_HEIGHT and HEX_WIDTH, respectively
+                float x = startX + j * (HEX_WIDTH + HEX_MARGIN);
+                float y = startY + i * ((3f / 4f) * HEX_HEIGHT + HEX_MARGIN);
 
-                startX += HEX_RADIUS * 3;
+                Hexagon hexagon = new Hexagon(x, y, HEX_RADIUS, fillPaint, strokePaint, isClickable);
+                rowHexagons.add(hexagon);
             }
 
-            startY += HEX_RADIUS * 2;
+            hexagons.add(rowHexagons);
         }
     }
+
 
     @Override
     protected void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
 
-        for (Hexagon hexagon : hexagons) {
-            hexagon.draw(canvas);
+        for (List<Hexagon> row : hexagons) {
+            for (Hexagon hexagon : row) {
+                hexagon.draw(canvas);
+            }
         }
     }
 
-    private int getRowWidth(int row) {
-        return HEX_RADIUS * 3 * HEXAGONS_IN_ROWS[row];
-    }
-
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             float x = event.getX();
             float y = event.getY();
 
-            for (Hexagon hexagon : hexagons) {
-                if (hexagon.isClickable() && isPointInHexagon(x, y, hexagon)) {
-                    hexagon.toggleColor();
-                    invalidate();
-                    break;
+            for (List<Hexagon> row : hexagons) {
+                for (Hexagon hexagon : row) {
+                    if (hexagon.isClickable() && isPointInHexagon(x, y, hexagon)) {
+                        hexagon.toggleColor();
+                        invalidate();
+                        break;
+                    }
                 }
             }
         }
