@@ -48,6 +48,7 @@ public class IntensityRNGActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(IntensityRNGActivity.this, MainActivity.class);
                 i.putExtra("intensity", tv_result.getText().toString());
+                i.putExtra("mode", "haxxor");
                 startActivity(i);
             }
         });
