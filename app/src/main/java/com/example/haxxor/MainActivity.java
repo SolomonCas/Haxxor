@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button GenerateInspiration_Button;
     Button Mode_Button;
     ImageView Inspiration_ImageView;
+    HexagonalGridView HaxxorGrid;
+    HexagonalGridView SentinelGrid;
     int intensity;
     String currentMode;
     @Override
@@ -45,6 +47,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Setup separate grids by role (for convenience to save highlighted hexagons when switching roles)
+        HaxxorGrid = (HexagonalGridView) findViewById(R.id.haxxorGrid);
+        SentinelGrid = (HexagonalGridView) findViewById(R.id.sentinelGrid);
+        HaxxorGrid.setGridMode("haxxor");
+        SentinelGrid.setGridMode("sentinel");
+
         // Setup Initial View State (By default, Haxxor mode)
         Button Mode_Button = (Button) findViewById(R.id.mode_button);
         currentMode = getIntent().getStringExtra("mode");
@@ -56,11 +64,15 @@ public class MainActivity extends AppCompatActivity {
                     currentMode = "sentinel";
                     GenerateInspiration_Button.setVisibility(View.VISIBLE);
                     Inspiration_ImageView.setVisibility(View.VISIBLE);
+                    HaxxorGrid.setVisibility(View.INVISIBLE);
+                    SentinelGrid.setVisibility(View.VISIBLE);
                 }
                 else {
                     currentMode = "haxxor";
                     GenerateInspiration_Button.setVisibility(View.INVISIBLE);
                     Inspiration_ImageView.setVisibility(View.INVISIBLE);
+                    SentinelGrid.setVisibility(View.INVISIBLE);
+                    HaxxorGrid.setVisibility(View.VISIBLE);
                 }
                 Mode_Button.setText(currentMode);
             }
@@ -83,13 +95,13 @@ public class MainActivity extends AppCompatActivity {
         Inspiration_ImageView = (ImageView) findViewById(R.id.inspiration_img);
         // button click -> generates a random index -> opens a modal designed as a card -> card shows trap details
         String[] inspiration = {
-                "Decomposition",
-                "Deception",
-                "Constriction",
-                "Incision",
-                "Prescription",
-                "Landmine",
-                "Nullification"
+                "Decomposition", // #c05bb6
+                "Deception", // #1a65bc
+                "Constriction", // #0fb2eb
+                "Incision", // #f0d6ec
+                "Prescription", // #4b8e7f
+                "Landmine", // #73116c
+                "Nullification" // #f57a29
         };
 
         AssetManager assetManager = getAssets();

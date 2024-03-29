@@ -26,10 +26,15 @@ public class HexagonalGridView extends View {
     private static final int BOARD_TOP_MARGIN = 100;
     private static final int BOARD_START_MARGIN = 18;
     private List<List<Hexagon>> hexagons;
+    private String mode;
 
     public HexagonalGridView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initializeHexagons();
+    }
+
+    public void setGridMode(String mode) {
+        this.mode = mode;
     }
 
     @Override
@@ -106,16 +111,24 @@ public class HexagonalGridView extends View {
             for (List<Hexagon> row : hexagons) {
                 for (Hexagon hexagon : row) {
                     if (hexagon.isClickable() && isPointInHexagon(x, y, hexagon)) {
-                        hexagon.toggleColor();
-                        invalidate();
-                        break;
+                        if (mode.equals("haxxor")) {
+                            hexagon.haxxorToggleColor();
+                            invalidate();
+                            break;
+                        }
+                        else if (mode.equals("sentinel")) {
+                            hexagon.sentinelToggleColor();
+                            invalidate();
+                            break;
+                        }
                     }
                 }
             }
         }
-
         return true;
     }
+
+    // todo: on hold event, set hex color back to the default to represent removing trap from grid
 
     private boolean isPointInHexagon(float x, float y, Hexagon hexagon) {
         float dx = x - hexagon.getCenterX();

@@ -50,12 +50,27 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.example.haxxor.HexagonalGridView
-        android:id="@+id/hexagonView"
+        android:id="@+id/haxxorGrid"
         android:layout_width="0dp"
         android:layout_height="550dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline3"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/mode_button"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.example.haxxor.HexagonalGridView
+        android:id="@+id/sentinelGrid"
+        android:layout_width="0dp"
+        android:layout_height="550dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintHorizontal_bias="0"
@@ -79,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hexagonView"
+        app:layout_constraintTop_toBottomOf="@id/haxxorGrid"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button

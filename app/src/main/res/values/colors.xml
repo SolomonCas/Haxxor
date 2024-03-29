@@ -8,7 +8,17 @@
     <color name="hexagon_sentinel">#8DA6CA</color>
     <color name="hexagon_haxxor">#E65454</color>
 
-    <color name="trap">#d631d1</color>
+    <color name="check_trap">#d631d1</color>
 
     <color name="text_color">#004AAD</color>
+    <color name="trap_decomposition">#c05bb6</color>
+    <color name="trap_deception">#1a65bc</color>
+    <color name="trap_constriction">#0fb2eb</color>
+    <color name="trap_incision">#f0d6ec</color>
+    <color name="trap_prescription">#4b8e7f</color>
+    <color name="trap_landmine">#73116c</color>
+    <color name="trap_nullification">#f57a29</color>
+    <color name="trap_inspiration">#d9442d</color>
+    <color name="trap_erasion">#bd1523</color>
+    <color name="trap_conclusion">#faa97a</color>
 </resources>
