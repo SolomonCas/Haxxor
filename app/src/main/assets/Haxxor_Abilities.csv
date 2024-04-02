@@ -1,63 +1,63 @@
-Sentinel,Deception,Fake Trap. If activated. discard this card. if destroyed. deal 1 damage to the destroyer,good.jpg
-Sentinel,Constriction,Stun Trap. Haxxor cannot move 1 space on their next turn ,good.jpg
-Sentinel,Incision,Damage trap. deal 1 damage,good.jpg
-Sentinel,Decomposition,Discard Card Trap. If activated. Discard a card from the activators hand,good.jpg
-Sentinel,Prescription,Draw Trap. If activated. you draw a card,good.jpg
-Sentinel,Bypass,<Bypass> Negates an ability. Lock this card after use,good.jpg
-Sentinel,Landmine,<Trap> if an entity lands on this structure. Deal 1 DMG to this hexagon and all adjacent hexagons,good.jpg
-Sentinel,Nullification,If activated. the activator skips their next turn,good.jpg
-Sentinel,Inspiration,RNG Trap with the use of the digital companion,good.jpg
-Sentinel,Erasion,<Ultimate Trap>  If activated. Lock 1 Card from each of the haxxors hands at randomAll other Ultimate Sentinel Cards now have no effect. discard and redraw if you draw one,good.jpg
-Sentinel,Conclusion,<Ultimate Trap>  Can only be used once 5 traps have been sprung. Destroy the haxxor who activates this trap. All other Ultimate Sentinel Cards now have no effect. redraw if you draw one,good.jpg
-Sentinel,Binary Bunny,REACTION: When you are a sentinel. summon a binary bunny,good.jpg
-Sentinel,Warrior,Attack: Deal 1 Damage to adjacent Haxxor,good.jpg
-Sentinel,Pusher,Push: Push an adjacent haxxor or structure one space,good.jpg
-Sentinel,Golem,Recalibrate: Select an adjacent haxxor structure. it is now a sentinel structure,good.jpg
-Sentinel,Cleric,Heal: Heal 1 DMG to selected target,good.jpg
-Sentinel,DigiBite,Choose 1 Haxxor. if there is a Digital next to it. Deal 1 DMG to that haxxor,good.jpg
-Sentinel,Joker,<Digital>Trap absorption: Jokers absorb the effect of traps they activate. Harlequin Strike: Inflict any absorbed effects onto an adjacent haxxor. reset current stored effects,good.jpg
-Sentinel,Artillery,"Select  a Digital. it gains ""Attack""",good.jpg
-Sentinel,Swap,Choose 1 Haxxor and 1 Non-Ultimate Digital. switch their positions,good.jpg
-Sentinel,Kronos,<Ultimate Digital> When spawned it gains the property inevitable. When kronos lands on the player spawn hex. delete this digital and Haxxors are teleported to the player spawn hexs. All other Ultimate Sentinel Cards now have no effect. redraw if you draw one,good.jpg
-Sentinel,Bunderworld,"<Ultimate> Once Per Turn. Summon a Binary Bunny. If there are 5 binary bunnies on the field. all bunnies gain ""Attack""  All other Ultimate Sentinel Cards now have no effect. redraw if you draw one",good.jpg
-Sentinel,Protocol of Greed,Draw 2 cards. then discard 1 card,good.jpg
-Sentinel,Protocol of Sight,Look at the top 3 cards of your deck,good.jpg
-Sentinel,Firewall,Put down 3 structure tokens. they can be destroyed in 1 hit,good.jpg
-Sentinel,Cyber Conduit,Put down 1 Structure token. if there are two cyber conduits on the field. then once per turn. you may look at the top card of your deck,good.jpg
-Sentinel,Shield,Put down 1 structure token on an existing structure. if the structure is attacked. destroy this structure instead,good.jpg
-Sentinel,Barbed wire,Put down 1 structure token. any entity that lands on this structure token is dealt 1 damage,good.jpg
-Sentinel,BrainFreezer,Put down 1 structure token. all reaction abilities cannot be used while this structure is active,good.jpg
-Sentinel,Orbital Cannon,<Ultimate Structure> Once per turn. deal 1 damage to all opponents. All other Ultimate Sentinel Cards now have no effect. redraw if you draw one,good.jpg
-Sentinel,Oracle Tower,"<Ultimate Structure> Put down 1 structure token. the structure gets ""while active. the owner can draw 1 extra card per turn"". All other Ultimate Sentinel Cards now have no effect. redraw if you draw one",good.jpg
-Haxxor,C104K (cloak),"You gain the effect ""Cannot be attacked"" for 1 sentinel turn",hacker.jpg
-Haxxor,B1G 5T3P5 (Big Steps),Move 1 Space,hacker.jpg
-Haxxor,4RC4N3 B01T (Arcane Bolt),Select 1 Tier 1 Digital. Deal 1 DMG to it,hacker.jpg
-Haxxor,MI9HTY PU5H (Mighty Push),Select 1 Digital or Structure. Push it 1 space,hacker.jpg
-Haxxor,53C0ND W1ND (Second Wind),REACTION: When your character moves. select 1 adjacent Digital or Structure. Deal 1 DMG to it,hacker.jpg
-Haxxor,Bypass,Negates an ability. Lock this card after use,hacker.jpg
-Haxxor,4B5TR4CT10N (Abstraction),Target a Digital. they cannot use abilities for 2 turns,hacker.jpg
-Haxxor,5UR93 (Surge),Select a Digital. Deal 2 DMG to it,hacker.jpg
-Haxxor,F1R3B411 (Fireball),Select a hexagon. Deal 1 DMG to this hexagon and all adjacent hexagons,hacker.jpg
-Haxxor,XLR8,<Ultimate> You can now move 2 spaces per turn. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,hacker.jpg
-Haxxor,4RM493DD0N (Armageddon),<Ultimate> Destroy all summoned digitals. your health is now at 1. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,hacker.jpg
-Haxxor,Call It!,Select a hexagon. if there is a trap on that hexagon. destroy it,hacker.jpg
-Haxxor,Refresh,Choose 1 Non-Ultimate Card in the Play pile. return it to the deck and suffle,hacker.jpg
-Haxxor,Data Leak,Choose 1 Card in the sentinel's hand and they have to reveal it.,hacker.jpg
-Haxxor,Oracle Sight,Look at the top 3 cards of your deck,hacker.jpg
-Haxxor,Facial Recognition Scan,First team to get a picture of an opposing player's face gets to choose two cards from the opposing hand to be revealed. Start when both sides have their cameras ready,hacker.jpg
-Haxxor,Manifestation,Look at the top 3 cards of the deck and rearrange them in any order,hacker.jpg
-Haxxor,Hyperscan,Force sentinel to reveal location of one trap,hacker.jpg
-Haxxor,Partition Swap,Choose a card from a sentinel's hand for them to redraw. Sentinels shuffle their deck. You may not see the contents of their cards,hacker.jpg
-Haxxor,Enlightenment,<Ultimate> Sentinels now set trap cards face up. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,hacker.jpg
-Haxxor,Digital Companion,<Ultimate> Any digital companions at play are now viewable by all. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,hacker.jpg
-Haxxor,Deadline Extension,REACTION: When your character suffers fatal damage. reset your health to 1. this card is then deleted,hacker.jpg
-Haxxor,Greedy Algorithm,Draw 2 cards. then discard 1 card,hacker.jpg
-Haxxor,Rewind,Teleport to a Haxxor hex. and heal 3 hearts,hacker.jpg
-Haxxor,Lag Spike,Regain 1 heart next turn,hacker.jpg
-Haxxor,All Charged Up!,REACTION: Check your phones! If sentinel attacks. whoever has the lower battery level takes the damage.,hacker.jpg
-Haxxor,Medic!,Select 1 Haxxor. Heal 1 heart to that haxxor,hacker.jpg
-Haxxor,Recharge,Regain 2 Hearts Instantly,hacker.jpg
-Haxxor,Cautious Cross,REACTION: Negates effect of a non-ultimate trap,hacker.jpg
-Haxxor,Reflect,REACTION: When your character is attacked. negate the damage ,hacker.jpg
-Haxxor,Undying Bulwark,"<Ultimate> REACTION: When your character suffers fatal damage. this card automatically resets your health to 1 and you gain the effect ""Cannot be damaged"" for 2 sentinel turns. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one",hacker.jpg
-Haxxor,Stand Strong,<Ultimate> Select a fallen digital. they revive with 2 Hearts. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,hacker.jpg
+Sentinel,Deception,Fake Trap. If activated. discard this card. if destroyed. deal 1 damage to the destroyer,Deception.png
+Sentinel,Constriction,Stun Trap. Haxxor cannot move 1 space on their next turn ,Constriction.png
+Sentinel,Incision,Damage trap. deal 1 damage,Incision.png
+Sentinel,Decomposition,Discard Card Trap. If activated. Discard a card from the activators hand,Decomposition.png
+Sentinel,Prescription,Draw Trap. If activated. you draw a card,Prescription.png
+Sentinel,Bypass,<Bypass> Negates an ability. Lock this card after use,BYPASS(2).png
+Sentinel,Landmine,<Trap> if an entity lands on this structure. Deal 1 DMG to this hexagon and all adjacent hexagons,Landmine.png
+Sentinel,Nullification,If activated. the activator skips their next turn,Nullification.png
+Sentinel,Inspiration,RNG Trap with the use of the digital companion,INSPIRATION.png
+Sentinel,Erasion,<Ultimate Trap>  If activated. Lock 1 Card from each of the haxxors hands at randomAll other Ultimate Sentinel Cards now have no effect. discard and redraw if you draw one,ERASION.png
+Sentinel,Conclusion,<Ultimate Trap>  Can only be used once 5 traps have been sprung. Destroy the haxxor who activates this trap. All other Ultimate Sentinel Cards now have no effect. redraw if you draw one,CONCLUSION.png
+Sentinel,Binary Bunny,REACTION: When you are a sentinel. summon a binary bunny,BINARY_BUNNY.png
+Sentinel,Warrior,Attack: Deal 1 Damage to adjacent Haxxor,WARRIOR.png
+Sentinel,Pusher,Push: Push an adjacent haxxor or structure one space,PUSHER.png
+Sentinel,Golem,Recalibrate: Select an adjacent haxxor structure. it is now a sentinel structure,GOLEM.png
+Sentinel,Cleric,Heal: Heal 1 DMG to selected target,CLERIC.png
+Sentinel,DigiBite,Choose 1 Haxxor. if there is a Digital next to it. Deal 1 DMG to that haxxor,DIGIBITE.png
+Sentinel,Joker,<Digital>Trap absorption: Jokers absorb the effect of traps they activate. Harlequin Strike: Inflict any absorbed effects onto an adjacent haxxor. reset current stored effects,JOKER.png
+Sentinel,Artillery,"Select  a Digital. it gains ""Attack""",ARTILLERY.png
+Sentinel,Swap,Choose 1 Haxxor and 1 Non-Ultimate Digital. switch their positions,SWAP.png
+Sentinel,Kronos,<Ultimate Digital> When spawned it gains the property inevitable. When kronos lands on the player spawn hex. delete this digital and Haxxors are teleported to the player spawn hexs. All other Ultimate Sentinel Cards now have no effect. redraw if you draw one,KRONOS.png
+Sentinel,Bunderworld,"<Ultimate> Once Per Turn. Summon a Binary Bunny. If there are 5 binary bunnies on the field. all bunnies gain ""Attack""  All other Ultimate Sentinel Cards now have no effect. redraw if you draw one",BUNDERWORLD.png
+Sentinel,Protocol of Greed,Draw 2 cards. then discard 1 card,PROTOCOL_OF_GREED.png
+Sentinel,Protocol of Sight,Look at the top 3 cards of your deck,PROTOCOL_OF_SIGHT.png
+Sentinel,Firewall,Put down 3 structure tokens. they can be destroyed in 1 hit,FIREWALL.png
+Sentinel,Cyber Conduit,Put down 1 Structure token. if there are two cyber conduits on the field. then once per turn. you may look at the top card of your deck,CYBER_CONDUIT.png
+Sentinel,Shield,Put down 1 structure token on an existing structure. if the structure is attacked. destroy this structure instead,SHIELD.png
+Sentinel,Barbed wire,Put down 1 structure token. any entity that lands on this structure token is dealt 1 damage,BARBED_WIRE.png
+Sentinel,BrainFreezer,Put down 1 structure token. all reaction abilities cannot be used while this structure is active,BRAIN_FREEZER.png
+Sentinel,Orbital Cannon,<Ultimate Structure> Once per turn. deal 1 damage to all opponents. All other Ultimate Sentinel Cards now have no effect. redraw if you draw one,ORBITAL_CANNON.png
+Sentinel,Oracle Tower,"<Ultimate Structure> Put down 1 structure token. the structure gets ""while active. the owner can draw 1 extra card per turn"". All other Ultimate Sentinel Cards now have no effect. redraw if you draw one",ORACLE_TOWER.png
+Haxxor,C104K (cloak),"You gain the effect ""Cannot be attacked"" for 1 sentinel turn",CLOAK.png
+Haxxor,B1G 5T3P5 (Big Steps),Move 1 Space,BIG_STEPS.png
+Haxxor,4RC4N3 B01T (Arcane Bolt),Select 1 Tier 1 Digital. Deal 1 DMG to it,ARCANE_BOLT.png
+Haxxor,MI9HTY PU5H (Mighty Push),Select 1 Digital or Structure. Push it 1 space,MIGHTY_PUSH.png
+Haxxor,53C0ND W1ND (Second Wind),REACTION: When your character moves. select 1 adjacent Digital or Structure. Deal 1 DMG to it,SECOND_WIND.png
+Haxxor,Bypass,Negates an ability. Lock this card after use,BYPASS.png
+Haxxor,4B5TR4CT10N (Abstraction),Target a Digital. they cannot use abilities for 2 turns,ABSTRACTION.png
+Haxxor,5UR93 (Surge),Select a Digital. Deal 2 DMG to it,SURGE.png
+Haxxor,F1R3B411 (Fireball),Select a hexagon. Deal 1 DMG to this hexagon and all adjacent hexagons,FIREBALL.png
+Haxxor,XLR8,<Ultimate> You can now move 2 spaces per turn. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,XLR8.png
+Haxxor,4RM493DD0N (Armageddon),<Ultimate> Destroy all summoned digitals. your health is now at 1. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,ARMAGEDDON.png
+Haxxor,Call It!,Select a hexagon. if there is a trap on that hexagon. destroy it,CALL_IT.png
+Haxxor,Refresh,Choose 1 Non-Ultimate Card in the Play pile. return it to the deck and suffle,REFRESH.png
+Haxxor,Data Leak,Choose 1 Card in the sentinel's hand and they have to reveal it.,DATA_LEAK.png
+Haxxor,Oracle Sight,Look at the top 3 cards of your deck,ORACLE_SIGHT.png
+Haxxor,Facial Recognition Scan,First team to get a picture of an opposing player's face gets to choose two cards from the opposing hand to be revealed. Start when both sides have their cameras ready,FACIAL_RECOGNITION_SCAN.png
+Haxxor,Manifestation,Look at the top 3 cards of the deck and rearrange them in any order,MANIFESTATION.png
+Haxxor,Hyperscan,Force sentinel to reveal location of one trap,HYPERSCAN.png
+Haxxor,Partition Swap,Choose a card from a sentinel's hand for them to redraw. Sentinels shuffle their deck. You may not see the contents of their cards,PARTITION_SWAP.png
+Haxxor,Enlightenment,<Ultimate> Sentinels now set trap cards face up. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,ENLIGHTENMENT.png
+Haxxor,Digital Companion,<Ultimate> Any digital companions at play are now viewable by all. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,DIGITAL_COMPANION.png
+Haxxor,Deadline Extension,REACTION: When your character suffers fatal damage. reset your health to 1. this card is then deleted,DEADLINE_EXTENSION.png
+Haxxor,Greedy Algorithm,Draw 2 cards. then discard 1 card,GREEDY_ALGORITHM.png
+Haxxor,Rewind,Teleport to a Haxxor hex. and heal 3 hearts,REWIND.png
+Haxxor,Lag Spike,Regain 1 heart next turn,LAG_SPIKE.png
+Haxxor,All Charged Up!,REACTION: Check your phones! If sentinel attacks. whoever has the lower battery level takes the damage.,ALL_CHARGED_UP.png
+Haxxor,Medic!,Select 1 Haxxor. Heal 1 heart to that haxxor,MEDIC.png
+Haxxor,Recharge,Regain 2 Hearts Instantly,RECHARGE.png
+Haxxor,Cautious Cross,REACTION: Negates effect of a non-ultimate trap,CAUTIOUS_CROSS.png
+Haxxor,Reflect,REACTION: When your character is attacked. negate the damage ,REFLECT.png
+Haxxor,Undying Bulwark,"<Ultimate> REACTION: When your character suffers fatal damage. this card automatically resets your health to 1 and you gain the effect ""Cannot be damaged"" for 2 sentinel turns. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one",UNDYING_BULWARK.png
+Haxxor,Stand Strong,<Ultimate> Select a fallen digital. they revive with 2 Hearts. All other Ultimate Haxxor Cards now have no effect. discard and redraw if you draw one,STAND_STRONG.png

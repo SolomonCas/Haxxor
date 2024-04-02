@@ -40,7 +40,6 @@ public class ability_RecyclerAdaptor extends RecyclerView.Adapter<ability_Recycl
             public void onClick(View v) {
                 Intent intent = new Intent(context, Detailed_Ability.class);
                 intent.putExtra("Name", ability_model.get(position).getName());
-                intent.putExtra("Effect", ability_model.get(position).getEffect());
                 intent.putExtra("Image", ability_model.get(position).getImage());
                 context.startActivity(intent);
             }

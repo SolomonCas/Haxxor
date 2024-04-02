@@ -1,6 +1,9 @@
 package com.example.haxxor.AbilityListView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.haxxor.DatabaseHelper;
+import com.example.haxxor.MainActivity;
 import com.example.haxxor.R;
 
 import java.util.ArrayList;
@@ -20,6 +24,7 @@ public class AbilityActivity extends AppCompatActivity {
     ArrayList<Ability> abilityModel = new ArrayList<>();
     ability_RecyclerAdaptor abilityRecyclerAdaptor;
     RecyclerView ability_Recycler;
+    Button doneButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,11 +38,19 @@ public class AbilityActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(this);
         ability_Recycler = (RecyclerView) findViewById(R.id.abilityRecycler);
+        doneButton = (Button) findViewById(R.id.back_btn);
 
         //abilityModel = db.getAbilities(getIntent().getStringExtra("Type")); // For Specific Player
         abilityModel = db.getAllAbilities();
         abilityRecyclerAdaptor = new ability_RecyclerAdaptor(this, abilityModel);
         ability_Recycler.setAdapter(abilityRecyclerAdaptor);
         ability_Recycler.setLayoutManager(new LinearLayoutManager(this));
+
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }
