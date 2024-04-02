@@ -1,7 +1,10 @@
 package com.example.haxxor.AbilityListView;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,8 +22,9 @@ import java.io.InputStream;
 public class Detailed_Ability extends AppCompatActivity {
 
     TextView detailed_name;
-    TextView detailed_effect;
     ImageView detailed_image;
+
+    Button done_button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +36,19 @@ public class Detailed_Ability extends AppCompatActivity {
             return insets;
         });
 
-        detailed_name = (TextView)  findViewById(R.id.detailed_name);
-        detailed_effect = (TextView) findViewById(R.id.detailed_effect);
+        detailed_name = (TextView)  findViewById(R.id.detailed_Ability);
         detailed_image = (ImageView) findViewById(R.id.detailed_image);
+        done_button = (Button) findViewById(R.id.doneButton);
 
         detailed_name.setText(getIntent().getStringExtra("Name"));
-        detailed_effect.setText(getIntent().getStringExtra("Effect"));
         detailed_image.setImageDrawable(getImage(getIntent().getStringExtra("Image")));
+
+        done_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public Drawable getImage(String filename){

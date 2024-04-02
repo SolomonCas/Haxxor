@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static Context context;
     private static final String DATABASE_NAME = "AbilitiesDB";
-    private static final int DATABASE_VERSION = 7;
+    private static final int DATABASE_VERSION = 8;
     private static final String TABLE_ABILITIES = "Abilities";
     private static final String COLUMN_TYPE = "type";
     private static final String COLUMN_NAME = "name";
@@ -40,7 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion < 7) {
+        if (oldVersion < 8) {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_ABILITIES); // Easier to Update CSV
             String CREATE_ABILITIES_TABLE = "CREATE TABLE " + TABLE_ABILITIES + "("
                     + COLUMN_TYPE + " TEXT,"
