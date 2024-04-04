@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     Inspiration_ImageView.setVisibility(View.VISIBLE);
                     HaxxorGrid.setVisibility(View.INVISIBLE);
                     SentinelGrid.setVisibility(View.VISIBLE);
+                    HaxxorGrid.setSentinelHexagons(SentinelGrid.getHexagons());
                 }
                 else {
                     currentMode = "haxxor";

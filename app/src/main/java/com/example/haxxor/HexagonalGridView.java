@@ -26,6 +26,7 @@ public class HexagonalGridView extends View {
     private static final int BOARD_TOP_MARGIN = 100;
     private static final int BOARD_START_MARGIN = 18;
     private List<List<Hexagon>> hexagons;
+    List<List<Hexagon>> sentinelHexagons;
     private String mode;
 
     public HexagonalGridView(Context context, AttributeSet attrs) {
@@ -46,6 +47,7 @@ public class HexagonalGridView extends View {
     @SuppressLint("ResourceAsColor")
     private void initializeHexagons() {
         hexagons = new ArrayList<>();
+        initializeSentinelHexagons();
         int startY = HEX_MARGIN + BOARD_TOP_MARGIN;
 
         for (int i = 0; i < NUM_ROWS; i++) {
@@ -85,6 +87,73 @@ public class HexagonalGridView extends View {
         }
     }
 
+    @SuppressLint("ResourceAsColor")
+    private void initializeSentinelHexagons() {
+        sentinelHexagons = new ArrayList<>();
+        int startY = HEX_MARGIN + BOARD_TOP_MARGIN;
+
+        for (int i = 0; i < NUM_ROWS; i++) {
+            List<Hexagon> rowHexagons = new ArrayList<>();
+            int numHexagonsInRow = HEXAGONS_IN_ROWS[i];
+
+            //int startX = HEX_MARGIN + (HEX_WIDTH / 2) * (NUM_ROWS - numHexagonsInRow) + BOARD_START_MARGIN;
+            float startX = (getWidth() - getRowWidth(i) + HEX_WIDTH) / 2;
+
+            for (int j = 0; j < numHexagonsInRow; j++) {
+                Paint fillPaint = new Paint();
+                if (i == 0) {
+                    fillPaint.setColor(Color.parseColor("#8DA6CA"));
+                } else if (i == NUM_ROWS - 1) {
+                    fillPaint.setColor(Color.parseColor("#E65454"));
+                } else {
+                    fillPaint.setColor(Color.parseColor("#131122"));
+                }
+                fillPaint.setStyle(Paint.Style.FILL);
+
+                Paint strokePaint = new Paint();
+                strokePaint.setColor(Color.parseColor("#B9C9DF")); // Set stroke color
+                strokePaint.setStyle(Paint.Style.STROKE);
+                strokePaint.setStrokeWidth(STROKE_WIDTH); // Set stroke width
+
+                boolean isClickable = (i >= 1 && i <= 5);
+
+                // Adjust startY and startX to include HEX_HEIGHT and HEX_WIDTH, respectively
+                float x = startX + j * (HEX_WIDTH + HEX_MARGIN);
+                float y = startY + i * ((3f / 4f) * HEX_HEIGHT + HEX_MARGIN);
+
+                Hexagon hexagon = new Hexagon(x, y, HEX_RADIUS, fillPaint, strokePaint, isClickable);
+                rowHexagons.add(hexagon);
+            }
+
+            sentinelHexagons.add(rowHexagons);
+        }
+    }
+
+    public List<List<Hexagon>> getHexagons() {
+        return hexagons;
+    }
+
+    public void setSentinelHexagons(List<List<Hexagon>> sentinelHexagons) {
+        this.sentinelHexagons = sentinelHexagons;
+    }
+
+
+    // Method to find a corresponding hexagon in sentinelHexagons
+    public Hexagon findSentinelHexagon(Hexagon hexagonToFind) {
+        // Iterate through the sentinelHexagons list
+        for (List<Hexagon> row : sentinelHexagons) {
+            for (Hexagon sentinelHexagon : row) {
+                // Check if the current hexagon in sentinelHexagons is equal to the parameter hexagonToFind
+                if (sentinelHexagon.equals(hexagonToFind)) {
+                    // Return the matching hexagon
+                    return sentinelHexagon;
+                }
+            }
+        }
+        // If no matching hexagon is found, return null
+        return null;
+    }
+
     private float getRowWidth(int row) {
         int numHexagons = HEXAGONS_IN_ROWS[row];
         return (float) (numHexagons * HEX_RADIUS * Math.sqrt(3));
@@ -112,6 +181,8 @@ public class HexagonalGridView extends View {
                 for (Hexagon hexagon : row) {
                     if (hexagon.isClickable() && isPointInHexagon(x, y, hexagon)) {
                         if (mode.equals("haxxor")) {
+                            Hexagon sentinelHexagon = findSentinelHexagon(hexagon);
+                            hexagon.setTrapColor(sentinelHexagon.getTrapColor());
                             hexagon.haxxorToggleColor();
                             invalidate();
                             break;

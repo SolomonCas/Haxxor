@@ -15,6 +15,7 @@ public class Hexagon {
     private final float radius;
     private final Paint fillPaint;
     private final Paint strokePaint;
+    private int trapColor = Color.parseColor("#40ff00");
     private boolean isClickable;
 
     public Hexagon(float centerX, float centerY, float radius, Paint fillPaint, Paint strokePaint, boolean isClickable) {
@@ -63,14 +64,36 @@ public class Hexagon {
         return radius;
     }
 
+    public Paint getFillPaint() {
+        return fillPaint;
+    }
+
+    public Paint getStrokePaint() {
+        return strokePaint;
+    }
+
     public boolean isClickable() {
         return isClickable;
     }
 
+    public int getTrapColor() {
+        return trapColor;
+    }
+
+    public void setTrapColor(int trapColor) {
+        if (trapColor == Color.parseColor("#131122")){
+            this.trapColor = Color.parseColor("#40ff00");
+        }
+        else {
+            this.trapColor = trapColor;
+        }
+    }
+
+
     @SuppressLint("ResourceAsColor")
     public void haxxorToggleColor() {
         if (fillPaint.getColor() == Color.parseColor("#131122")) {
-            fillPaint.setColor(Color.parseColor("#d631d1"));
+            fillPaint.setColor(trapColor);
         } else {
             fillPaint.setColor(Color.parseColor("#131122"));
         }
@@ -96,8 +119,21 @@ public class Hexagon {
         int defaultColor = Color.parseColor("#131122");
 
         // Replace colors from map
-        int replacementColor = colorMap.getOrDefault(currentColor, defaultColor);
-        fillPaint.setColor(replacementColor);
+        trapColor = colorMap.getOrDefault(currentColor, defaultColor);
+        fillPaint.setColor(trapColor);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof Hexagon)) {
+            return false;
+        }
+        Hexagon otherHexagon = (Hexagon) obj;
+        return Float.compare(centerX, otherHexagon.centerX) == 0
+                && Float.compare(centerY, otherHexagon.centerY) == 0;
     }
 
 }
