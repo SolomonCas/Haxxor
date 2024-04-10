@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,7 @@ public class AbilityActivity extends AppCompatActivity {
     ability_RecyclerAdaptor abilityRecyclerAdaptor;
     RecyclerView ability_Recycler;
     Button doneButton;
+    TextView tv_type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +41,11 @@ public class AbilityActivity extends AppCompatActivity {
         DatabaseHelper db = new DatabaseHelper(this);
         ability_Recycler = (RecyclerView) findViewById(R.id.abilityRecycler);
         doneButton = (Button) findViewById(R.id.back_btn);
+        tv_type = findViewById(R.id.tv_type);
 
-        //abilityModel = db.getAbilities(getIntent().getStringExtra("Type")); // For Specific Player
-        abilityModel = db.getAllAbilities();
+        tv_type.setText(getIntent().getStringExtra("Type"));
+        abilityModel = db.getAbilities(getIntent().getStringExtra("Type")); // For Specific Player
+//        abilityModel = db.getAllAbilities();
         abilityRecyclerAdaptor = new ability_RecyclerAdaptor(this, abilityModel);
         ability_Recycler.setAdapter(abilityRecyclerAdaptor);
         ability_Recycler.setLayoutManager(new LinearLayoutManager(this));

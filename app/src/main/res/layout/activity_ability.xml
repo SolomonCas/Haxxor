@@ -1,51 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/intensity_btn"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/hexagon_color"
+    android:orientation="vertical"
     tools:context=".AbilityListView.AbilityActivity">
-
-    <TextView
-        android:id="@+id/AbilityList_Text"
-        android:layout_width="289dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="52dp"
-        android:text="Ability List"
-        android:textAlignment="center"
-        android:textColor="#fff"
-        android:textSize="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/abilityRecycler"
-        android:layout_width="363dp"
-        android:layout_height="580dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AbilityList_Text" />
 
     <Button
         android:id="@+id/back_btn"
-        android:layout_width="228dp"
-        android:layout_height="49dp"
-        android:layout_marginStart="82dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="83dp"
-        android:layout_marginBottom="5dp"
-        android:text="Done"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abilityRecycler" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Done" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="40dp" />
+
+    <TextView
+        android:id="@+id/AbilityList_Text"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:text="Ability List"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="40dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/abilityRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp" />
+
+</LinearLayout>

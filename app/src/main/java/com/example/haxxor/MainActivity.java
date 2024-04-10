@@ -87,7 +87,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AbilityActivity.class);
-                intent.putExtra("Type", "Haxxor"); // example only
+                if (currentMode.equals("haxxor")) {
+                    intent.putExtra("Type", "Haxxor");
+                }
+                else {
+                    intent.putExtra("Type", "Sentinel");
+                }
+
                 startActivity(intent);
             }
         });
